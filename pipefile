@@ -1,0 +1,14 @@
+#!groovy
+
+properties([disableConcurrentBuilds()])
+
+pipeline {
+   agent any
+   
+   stages('First stage') {
+         steps {
+              echo 'Building...'
+        }
+    }
+
+}

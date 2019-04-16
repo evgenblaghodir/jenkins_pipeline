@@ -1,0 +1,20 @@
+#!groovy
+
+properties([disableConcurrentBuilds()])
+
+pipeline {
+   agent any
+   
+   options {
+   timestamps()
+   }
+   stages ('First stage') {
+       stage('First') {
+         steps {
+              echo 'Installing...'
+              sh 'ssh root@192.168.1.23 \'hostname\''
+              sh 'yum info tomcat'
+        } }
+    }
+
+}

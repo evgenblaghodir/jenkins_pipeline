@@ -9,12 +9,19 @@ pipeline {
    timestamps()
    }
    stages ('First stage') {
-       stage('First') {
+       stage('Build') {
          steps {
               echo 'Installing...'
               sh 'ssh root@192.168.1.23 \'hostname\''
               sh 'yum install tomcat -y'
-        } }
+        }
+        stage('Test'){
+           steps{
+              echo 'Testing if ok'
+              sh 'rpm -qa | grep tomcat*  
+         }
+       }
+       }
     }
 
 }

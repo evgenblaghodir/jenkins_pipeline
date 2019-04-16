@@ -15,8 +15,8 @@ pipeline {
               sh 'ssh root@192.168.1.23 \'hostname\''
               sh 'yum install tomcat -y'
         }
-        stage('Test'){
-           steps{
+        stage('Test') {
+           steps {
               echo 'Testing if ok'
               sh 'rpm -qa | grep tomcat*' 
          }

@@ -13,8 +13,7 @@ pipeline {
          steps {
               echo 'Installing...'
               sh 'whoami'
-              sh 'ssh root@192.168.1.23 \'hostname\''
-              sh 'whoami'
+              sh 'ssh root@192.168.1.23 \'whoami\''
               sh 'yum install tomcat -y'
                 }
         }

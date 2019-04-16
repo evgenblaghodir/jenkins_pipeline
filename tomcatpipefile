@@ -13,14 +13,14 @@ pipeline {
          steps {
               echo 'Installing...'
               sh 'whoami'
-              sh 'ssh root@192.168.1.23 \'whoami\''
-              sh 'hostname'
+              sh 'ssh root@192.168.1.23 \'yum install tomcat -y\''
+              
                 }
         }
         stage('Test') {
            steps {
               echo 'Testing if ok'
-              sh 'rpm -qa | grep tomcat*' 
+              sh 'ssh root@192.168.1.23 \'rpm -qa | grep tomcat*\'' 
                   }
        }
        }

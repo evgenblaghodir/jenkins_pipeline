@@ -14,7 +14,7 @@ pipeline {
               echo 'Installing...'
               sh 'whoami'
               sh 'ssh root@192.168.1.23 \'whoami\''
-              sh 'yum install tomcat -y'
+              sh 'hostname'
                 }
         }
         stage('Test') {

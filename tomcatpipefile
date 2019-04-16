@@ -8,7 +8,7 @@ pipeline {
    options {
    timestamps()
    }
-   stages ('First stage') {
+   stages {
        stage('Build') {
          steps {
               echo 'Installing...'

@@ -9,10 +9,11 @@ pipeline {
    timestamps()
    }
    stages ('First stage') {
+       stage('First') {
          steps {
               echo 'Building...'
               sh 'ssh root@192.168.1.23 \'hostname\''
-        }
+        } }
     }
 
 }
